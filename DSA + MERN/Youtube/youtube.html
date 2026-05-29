@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>YouTube Clone</title>
-
     <link rel="stylesheet" href="youtube.css">
-
 </head>
-
 <body>
 
     <!-- HEADER -->
@@ -20,104 +13,89 @@
     <header class="header">
 
         <div class="left">
-
-            <div class="menu">
-                ☰
-            </div>
-
-            <div class="logo">
-                YouTube
-            </div>
-
+            <div class="menu">☰</div>
+            <div class="logo">YouTube</div>
         </div>
 
         <div class="middle">
-
-            <input type="text"
-                placeholder="Search YouTube">
-
-            <button>
-                Search
-            </button>
-
+            <input type="text" placeholder="Search">
+            <button>🔍</button>
         </div>
 
         <div class="right">
-
-            <span>Create</span>
-
-            <span>Bell</span>
-
-            <span>User</span>
-
+            <span>➕ Create</span>
+            <span>🔔</span>
+            <span>👤 User</span>
         </div>
 
     </header>
 
-    <!-- SIDEBAR -->
+    <!-- MAIN SECTION -->
 
-    <section class="sidebar">
+    <div class="container">
 
-    </section>
+        <!-- SIDEBAR -->
 
-    <!-- VIDEO SECTION -->
+        <section class="sidebar">
 
-    <section class="videos">
+            <div class="item">🏠 Home</div>
+            <div class="item">🔥 Trending</div>
+            <div class="item">📺 Subscriptions</div>
+            <div class="item">🎵 Music</div>
+            <div class="item">🎮 Gaming</div>
+            <div class="item">⚙ Settings</div>
 
-        <div class="card">
+        </section>
 
-            <img src="https://i.ytimg.com/vi/Ke90Tje7VS0/maxresdefault.jpg"
-                alt="video">
+        <!-- VIDEOS -->
 
-            <h3>HTML Full Course</h3>
+        <section class="videos">
 
-            <p>CodeWithHarry</p>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/Ke90Tje7VS0/maxresdefault.jpg">
+                <h3>HTML Full Course</h3>
+                <p>CodeWithHarry</p>
+                <span>1M Views • 1 Year Ago</span>
+            </div>
 
-            <span>1M Views</span>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/Edsxf_NBFrw/maxresdefault.jpg">
+                <h3>CSS Tutorial</h3>
+                <p>Apna College</p>
+                <span>500K Views • 8 Months Ago</span>
+            </div>
 
-        </div>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/ZxKM3DCV2kE/maxresdefault.jpg">
+                <h3>JavaScript Basics</h3>
+                <p>Tech Gun</p>
+                <span>900K Views • 10 Months Ago</span>
+            </div>
 
-        <div class="card">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/HcOc7P5BMi4/maxresdefault.jpg">
+                <h3>React JS Course</h3>
+                <p>FreeCodeCamp</p>
+                <span>2M Views • 2 Years Ago</span>
+            </div>
 
-            <img src="https://i.ytimg.com/vi/Edsxf_NBFrw/maxresdefault.jpg"
-                alt="video">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/rfscVS0vtbw/maxresdefault.jpg">
+                <h3>Python Tutorial</h3>
+                <p>Programming with Mosh</p>
+                <span>3M Views • 3 Years Ago</span>
+            </div>
 
-            <h3>CSS Tutorial</h3>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/qz0aGYrrlhU/maxresdefault.jpg">
+                <h3>English Speaking Course</h3>
+                <p>Learn English</p>
+                <span>700K Views • 6 Months Ago</span>
+            </div>
 
-            <p>Apna College</p>
+        </section>
 
-            <span>500K Views</span>
-
-        </div>
-
-        <div class="card">
-
-            <img src="https://i.ytimg.com/vi/ZxKM3DCV2kE/maxresdefault.jpg"
-                alt="video">
-
-            <h3>JavaScript Basics</h3>
-
-            <p>Tech Gun</p>
-
-            <span>900K Views</span>
-
-        </div>
-
-        <div class="card">
-
-            <img src="https://i.ytimg.com/vi/HcOc7P5BMi4/maxresdefault.jpg"
-                alt="video">
-
-            <h3>React JS Course</h3>
-
-            <p>FreeCodeCamp</p>
-
-            <span>2M Views</span>
-
-        </div>
-
-    </section>
+    </div>
 
 </body>
-
 </html>
