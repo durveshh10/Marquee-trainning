@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body>
+
+    <h1>Student Registration Form</h1>
+
+    <form>
+
+        <!-- Personal Information Box -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <!-- Name -->
+            <label>
+                Name:
+                <input type="text" placeholder="John Doe">
+            </label>
+
+            <br><br>
+
+            <!-- Email -->
+            <label>
+                Email:
+                <input type="email" placeholder="abd@gmail.com">
+            </label>
+
+            <br><br>
+
+            <!-- Phone Number -->
+            <label>
+                Phone Number:
+                <input type="tel" placeholder="9876543210">
+            </label>
+
+            <br><br>
+
+            <!-- Date of Birth -->
+            <label>
+                Date of Birth:
+                <input type="date">
+            </label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- Gender Details Box -->
+        <fieldset>
+            <legend>Gender Details</legend>
+
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+
+            <br><br>
+
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+
+        </fieldset>
+
+        <br>
+
+        <!-- Course Information Box -->
+        <fieldset>
+            <legend>Course Information</legend>
+
+            <label for="course">Select Course:</label>
+
+            <select id="course">
+                <option>Select Course</option>
+                <option>BCA</option>
+                <option>BBA</option>
+                <option>B.Tech</option>
+                <option>MCA</option>
+                <option>MBA</option>
+            </select>
+
+        </fieldset>
+
+    </form>
+
+</body>
+</html>

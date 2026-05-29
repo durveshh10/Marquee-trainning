@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyResume</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: #dff5f7;
+            padding: 8px;
+        }
+
+        .resume{
+            width: 100%;
+            background-color: #e8fbfc;
+            border: 1px solid #b7d8dc;
+        }
+
+        /* Header */
+
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 70px 25px 70px;
+            border-bottom: 1px solid #b7d8dc;
+        }
+
+        .header-left{
+            width: 30%;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        .header-center{
+            width: 40%;
+            text-align: center;
+        }
+
+        .header-center h1{
+            font-size: 20px;
+            margin-bottom: 18px;
+            font-weight: bold;
+        }
+
+        .header-center h3{
+            font-size: 15px;
+            font-weight: normal;
+            margin-bottom: 18px;
+        }
+
+        .header-right{
+            width: 30%;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* Sections */
+
+        .section{
+            padding: 18px 18px 14px 18px;
+            border-bottom: 1px solid #b7d8dc;
+        }
+
+        .section h2{
+            font-size: 18px;
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+
+        .section p{
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        /* Education */
+
+        .education-item{
+            margin-bottom: 15px;
+        }
+
+        .education-item b{
+            font-size: 15px;
+        }
+
+        .education-row{
+            display: flex;
+            justify-content: space-between;
+            width: 280px;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* Projects */
+
+        .project{
+            margin-bottom: 20px;
+        }
+
+        .project h3{
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: normal;
+            text-decoration: underline;
+        }
+
+        /* Skills */
+
+        ul{
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        ul li{
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="resume">
+
+        <!-- Header -->
+
+        <div class="header">
+
+            <div class="header-left">
+                +91 88997786554
+            </div>
+
+            <div class="header-center">
+                <h1>Durvesh Pawar</h1>
+                <h3>Software Developer</h3>
+                <p>Vadodara,Gujarat</p>
+            </div>
+
+            <div class="header-right">
+                durvesh@example.com
+            </div>
+
+        </div>
+
+        <!-- About -->
+
+        <div class="section">
+
+            <h2>About Me</h2>
+
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Beatae quos saepe pariatur, consequatur, quos dolorum aliquam
+                eaque animi laborum corrupti iure voluptate at cumque, culpa
+                modi quam nemo praesentium tenetur?
+            </p>
+
+        </div>
+
+        <!-- Education -->
+
+        <div class="section">
+
+            <h2>Education</h2>
+
+            <div class="education-item">
+
+                <b>Baroda Public School (2017-18)</b>
+
+                <div class="education-row">
+                    <span>Class 10 th</span>
+                    <span>78.4%</span>
+                </div>
+
+            </div>
+
+            <div class="education-item">
+
+                <b>DAV JRL, Surat (2019-20)</b>
+
+                <div class="education-row">
+                    <span>Class 12th</span>
+                    <span>84%</span>
+                </div>
+
+            </div>
+
+            <div class="education-item">
+
+                <b>Parul University (2020-24)</b>
+
+                <div class="education-row">
+                    <span>B.Tech CSE</span>
+                    <span>8.7 CGPA</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Projects -->
+
+        <div class="section">
+
+            <h2>Projects</h2>
+
+            <div class="project">
+
+                <h3>E-Commerce Website</h3>
+
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Rerum impedit, mollitia consectetur consequuntur in incidunt
+                    quasi voluptatibus recusandae soluta aut nostrum est distinctio
+                    rem molestiae. Vero qui laudantium enim saepe.
+                </p>
+
+            </div>
+
+            <div class="project">
+
+                <h3>OMS Platform</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Atque facilis, maiores autem ex repellendus harum quae,
+                    accusamus id provident rem, molestiae eius praesentium
+                    corrupti numquam amet explicabo labore tempore sit!
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Skills -->
+
+        <div class="section">
+
+            <h2>Skills</h2>
+
+            <ul>
+                <li>Frontend:HTML, CSS, JS, Reactjs</li>
+                <li>Backend:Nodejs,Express</li>
+                <li>Database:MongoDB,MySql</li>
+                <li>Tools:Git, Postman,AWS</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

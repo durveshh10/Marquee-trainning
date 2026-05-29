@@ -1,0 +1,74 @@
+* {
+    margin: 8px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo,
+.flipkart {
+
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo {
+    background-color: yellow;
+}
+
+.travel {
+    background-color: lightgray;
+}
+
+.logo,
+.travel {
+    display: inline-block;
+    font-style: italic;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.location {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 60%;
+}
+
+.middle input {
+    width: 80%;
+    outline: none;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid dodgerblue;
+    padding: 5px;
+}
+
+.bottom .box {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: slateblue;
+    border-radius: 5px;
+}
+
+#hero .image img {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.description,
+.about,
+.help {
+    display: inline-block;
+    vertical-align: top;
+}

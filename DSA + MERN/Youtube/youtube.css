@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: Arial;
+}
+
+.header {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+
+.left {
+    display: inline-block;
+}
+
+.menu {
+    display: inline-block;
+    font-size: 25px;
+    margin-right: 20px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
+}
+
+
+.middle {
+    display: inline-block;
+    margin-left: 120px;
+}
+
+.middle input {
+    width: 400px;
+    height: 40px;
+    padding-left: 10px;
+    border: 1px solid gray;
+}
+
+.middle button {
+    height: 40px;
+    width: 80px;
+    background-color: lightgray;
+    border: none;
+}
+
+
+.right {
+    display: inline-block;
+    margin-left: 120px;
+}
+
+.right span {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+
+.sidebar {
+    width: 20px;
+    height: 100vh;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.videos {
+    display: inline-block;
+    width: 90%;
+    padding: 20px;
+}
+
+.card {
+    display: inline-block;
+    width: 300px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 10px;
+}
+
+.card p {
+    margin-top: 5px;
+    color: gray;
+}
+
+.card span {
+    display: block;
+    margin-top: 5px;
+    color: gray;
+}
