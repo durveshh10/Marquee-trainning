@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dosa Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f4f4;
+}
+
+.container{
+    width:600px;
+    height:400px;
+    border:3px solid black;
+    padding:10px;
+
+    display:grid;
+    gap:10px;
+
+    grid-template-columns:2fr 3fr;
+    grid-template-rows:1fr 1fr 2fr;
+
+    grid-template-areas:
+        "dosa chatni"
+        "dosa idli"
+        "sambhar sambhar";
+}
+
+.box{
+    border:2px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+    background:white;
+}
+
+.dosa{
+    grid-area:dosa;
+    background-color: aqua;
+}
+
+.chatni{
+    grid-area:chatni;
+    background-color: lightgray;    
+}
+
+.idli{
+    grid-area:idli;
+    background-color: lightpink;
+}
+
+.sambhar{
+    grid-area:sambhar;
+    background-color: lightgreen;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="box dosa">Dosa</div>
+    <div class="box chatni">Chatni</div>
+    <div class="box idli">Idli</div>
+    <div class="box sambhar">Sambhar</div>
+</div>
+
+</body>
+</html>

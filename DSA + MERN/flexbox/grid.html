@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Self Alignment</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#f4f4f4;
+}
+
+.container{
+    width:400px;
+    height:450px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(3,1fr);
+
+    border:3px solid rgb(36, 28, 55);
+}
+
+.cell{
+    border:1px solid rgb(67, 58, 81);
+    display:grid;
+}
+
+.box{
+    width:60px;
+    height:60px;
+    background: rgb(77, 174, 243);
+    border:2px solid black;
+}
+.a{
+    justify-self:start;
+    align-self:start;
+}
+
+.b{
+    justify-self:center;
+    align-self:start;
+}
+
+.c{
+    justify-self:end;
+    align-self:start;
+}
+
+.d{
+    justify-self:end;
+    align-self:center;
+}
+
+.e{
+    justify-self:center;
+    align-self: flex-end;
+}
+
+.f{
+    justify-self:start;
+    align-self:center;
+}
+
+.g{
+    justify-self:start;
+    align-self:end;
+}
+
+.h{
+    justify-self:center;
+    align-self:center;
+}
+
+.i{
+    justify-self:end;
+    align-self:end;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="cell">
+        <div class="box a"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box b"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box c"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box d"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box e"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box f"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box g"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box h"></div>
+    </div>
+
+    <div class="cell">
+        <div class="box i"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

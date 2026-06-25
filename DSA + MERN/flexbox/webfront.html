@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#1f252d;
+color:white;
+}
+
+/* Layout */
+
+.container{
+display:flex;
+min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:260px;
+background:#111827;
+padding:20px;
+overflow-y:auto;
+}
+
+.sidebar h2{
+margin-bottom:25px;
+text-align:center;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+padding:14px;
+margin-bottom:8px;
+background:#1f2937;
+border-radius:8px;
+cursor:pointer;
+}
+
+.sidebar ul li:hover{
+background:#374151;
+}
+
+.sidebar h4{
+margin:20px 0 10px;
+color:#9ca3af;
+}
+
+/* Main */
+
+.main{
+flex:1;
+}
+
+/* Navbar */
+
+.navbar{
+height:60px;
+background:#2c333d;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 20px;
+}
+
+.nav-left i,
+.nav-right i{
+margin-right:20px;
+cursor:pointer;
+}
+
+/* Content */
+
+.content{
+padding:20px;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+border-radius:10px;
+overflow:hidden;
+}
+
+.card-top{
+position:relative;
+padding:20px;
+height:140px;
+}
+
+.card-top h2{
+font-size:50px;
+}
+
+.card-top p{
+font-size:20px;
+}
+
+.card-icon{
+position:absolute;
+right:15px;
+top:15px;
+font-size:70px;
+opacity:.25;
+}
+
+.card-bottom{
+text-align:center;
+padding:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.blue{
+background:#0d6efd;
+}
+
+.green{
+background:#198754;
+}
+
+.yellow{
+background:#ffc107;
+color:black;
+}
+
+.red{
+background:#dc3545;
+}
+
+.blue .card-bottom{
+background:#0b5ed7;
+}
+
+.green .card-bottom{
+background:#157347;
+}
+
+.yellow .card-bottom{
+background:#d39e00;
+}
+
+.red .card-bottom{
+background:#bb2d3b;
+}
+
+/* Chart + Map */
+
+.dashboard{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.chart-box{
+background:#252c35;
+padding:20px;
+border-radius:10px;
+height:500px;
+}
+
+.map-box{
+background:#0d6efd;
+padding:20px;
+border-radius:10px;
+height:500px;
+}
+
+.map-box img{
+width:100%;
+height:300px;
+object-fit:contain;
+background:white;
+border-radius:8px;
+}
+
+.stats{
+display:flex;
+justify-content:space-around;
+margin-top:20px;
+text-align:center;
+}
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.dashboard{
+grid-template-columns:1fr;
+}
+}
+
+@media(max-width:700px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>AdminLTE 4</h2>
+
+<ul>
+
+<li><i class="fa-solid fa-gauge"></i> Dashboard</li>
+<li><i class="fa-regular fa-circle"></i> Dashboard v1</li>
+<li><i class="fa-regular fa-circle"></i> Dashboard v2</li>
+<li><i class="fa-regular fa-circle"></i> Dashboard v3</li>
+
+<li><i class="fa-solid fa-palette"></i> Theme Generate</li>
+<li><i class="fa-solid fa-cube"></i> Widgets</li>
+<li><i class="fa-solid fa-layer-group"></i> Layout Options</li>
+<li><i class="fa-solid fa-bell"></i> UI Elements</li>
+<li><i class="fa-solid fa-envelope"></i> Mailbox</li>
+<li><i class="fa-solid fa-file"></i> Forms</li>
+<li><i class="fa-solid fa-table"></i> Tables</li>
+
+<h4>PAGES</h4>
+
+<li><i class="fa-solid fa-file-lines"></i> Pages</li>
+
+<h4>EXAMPLES</h4>
+
+<li><i class="fa-solid fa-key"></i> Auth</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<div class="nav-left">
+<i class="fas fa-bars"></i>
+<i class="fas fa-home"></i>
+</div>
+
+<div class="nav-right">
+<i class="fas fa-search"></i>
+<i class="fas fa-comments"></i>
+<i class="fas fa-bell"></i>
+<i class="fas fa-expand"></i>
+</div>
+
+</div>
+
+<div class="content">
+
+<h1 style="margin-bottom:20px;">Dashboard</h1>
+
+<!-- Cards -->
+
+<div class="cards">
+
+<div class="card blue">
+<div class="card-top">
+<i class="fas fa-cart-shopping card-icon"></i>
+<h2>150</h2>
+<p>New Orders</p>
+</div>
+<div class="card-bottom">
+More Info →
+</div>
+</div>
+
+<div class="card green">
+<div class="card-top">
+<i class="fas fa-chart-simple card-icon"></i>
+<h2>53%</h2>
+<p>Bounce Rate</p>
+</div>
+<div class="card-bottom">
+More Info →
+</div>
+</div>
+
+<div class="card yellow">
+<div class="card-top">
+<i class="fas fa-user-plus card-icon"></i>
+<h2>44</h2>
+<p>User Registrations</p>
+</div>
+<div class="card-bottom">
+More Info →
+</div>
+</div>
+
+<div class="card red">
+<div class="card-top">
+<i class="fas fa-chart-pie card-icon"></i>
+<h2>65</h2>
+<p>Unique Visitors</p>
+</div>
+<div class="card-bottom">
+More Info →
+</div>
+</div>
+
+</div>
+
+<!-- Graph + Map -->
+
+<div class="dashboard">
+
+<div class="chart-box">
+<h2>Sales Value</h2>
+<canvas id="salesChart"></canvas>
+</div>
+
+<div class="map-box">
+
+<h2>World Sales</h2>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg">
+
+<div class="stats">
+
+<div>
+<h3>1294</h3>
+<p>Visitors</p>
+</div>
+
+<div>
+<h3>130</h3>
+<p>Online</p>
+</div>
+
+<div>
+<h3>842</h3>
+<p>Sales</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+new Chart(document.getElementById("salesChart"),{
+type:"line",
+data:{
+labels:["Jan","Feb","Mar","Apr","May","Jun","Jul"],
+datasets:[
+{
+label:"Sales",
+data:[25,58,47,21,49,75,49],
+borderWidth:3,
+tension:.4,
+fill:true
+},
+{
+label:"Visitors",
+data:[40,56,58,29,85,45,100],
+borderWidth:3,
+tension:.4,
+fill:true
+}
+]
+},
+options:{
+responsive:true,
+maintainAspectRatio:false
+}
+});
+
+</script>
+
+</body>
+</html>

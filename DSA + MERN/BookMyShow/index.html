@@ -1,34 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>BookMyShow</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Ticket UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
-<nav>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="left-nav">
+      <div class="logo">
+        <h2>book<span>my</span>show</h2>
+      </div>
 
-    <div class="logo">
-        bookMyShow
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities" />
+      </div>
     </div>
 
-    <div class="search">
-        <input type="text" placeholder="Search for Movies, Shows, Plays, Events and Activities">
+    <div class="right-nav">
+      <p>Mumbai</p>
+      <button>Sign In</button>
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- MENU -->
+  <div class="menu">
+    <div class="menu-left">
+      <a href="#">Movies</a>
+      <a href="#">Stream</a>
+      <a href="#">Events</a>
+      <a href="#">Plays</a>
+      <a href="#">Sports</a>
+      <a href="#">Activities</a>
     </div>
 
-    <div class="city">
-        Vadodara
+    <div class="menu-right">
+      <a href="#">ListYourShow</a>
+      <a href="#">Offers</a>
+      <a href="#">Gift Cards</a>
+    </div>
+  </div>
+
+  <!-- BANNER -->
+  <section class="banner-section">
+    <div class="banner">
+      <img src="https://assets-in-gm.bmscdn.com/promotions/cms/creatives/1780482779613_kaalamegakarigindhiweb.jpg" alt="Cinema Banner">
+    </div>
+  </section>
+
+  <!-- MOVIES -->
+  <section class="movies-section">
+    <div class="heading">
+      <h2>Recommended Movies</h2>
+      <a href="#">See All ></a>
     </div>
 
-    <div class="signin">
-        <button>Sign In</button>
+    <div class="movie-container">
+
+      <div class="movie-card">
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-NTM0SysgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@pt-v1.png,t-false,lfo-top_right,lx-N5,ly-0,w-160,l-end/et00439772-czdmzgbjfx-portrait.jpg" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>8.7/10 | 52K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Peddi</h3>
+          <p class="genre">Action / Drama</p>
+
+          <div class="info-strip">
+            <span>Hindi</span>
+            <span>12 Dec</span>
+          </div>
+
+          <div class="info-strip">
+            <span>2h 35m</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC,e-usm-2-2-0.5-0.008:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@like_202006280402.png,lx-24,ly-617,w-29,l-end:l-text,ie-NTM0SysgTGlrZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end:l-image,i-discovery-catalog@@icons@@pt-v1.png,t-false,lfo-top_right,lx-N5,ly-0,w-160,l-end/et00439772-czdmzgbjfx-portrait.jpg" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>8.4/10 | 34K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Metro Love</h3>
+          <p class="genre">Romance / Comedy</p>
+
+          <div class="info-strip">
+            <span>Hindi</span>
+            <span>20 Dec</span>
+          </div>
+
+          <div class="info-strip">
+            <span>2h 10m</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://picsum.photos/300/450?random=3" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>9.0/10 | 61K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Galaxy Run</h3>
+          <p class="genre">Sci-Fi / Adventure</p>
+
+          <div class="info-strip">
+            <span>English</span>
+            <span>05 Jan</span>
+          </div>
+
+          <div class="info-strip">
+            <span>2h 41m</span>
+         
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card">
+        <img src="https://picsum.photos/300/450?random=4" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>8.1/10 | 19K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Crimson Bay</h3>
+          <p class="genre">Mystery / Thriller</p>
+
+          <div class="info-strip">
+            <span>English</span>
+            <span>18 Jan</span>
+          </div>
+
+          <div class="info-strip">
+            <span>2h 08m</span>
+    
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="events-section">
+    <div class="heading">
+      <h2>Live Events</h2>
+      <a href="#">See All ></a>
     </div>
 
-    <div class="menu">
-        ☰
+    <div class="events-container">
+      <div class="event-card">
+        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=1400" alt="Event">
+        <h3>Music Concerts</h3>
+      </div>
+
+      <div class="event-card">
+        <img src="https://picsum.photos/400/250?random=11" alt="Event">
+        <h3>Comedy Shows</h3>
+      </div>
+
+      <div class="event-card">
+        <img src="https://picsum.photos/400/250?random=12" alt="Event">
+        <h3>Workshops</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIERE -->
+  <section class="premiere-section">
+    <div class="heading heading-dark">
+      <h2>Premieres</h2>
+      <a href="#">See All ></a>
     </div>
 
-</nav>
+    <div class="movie-container">
+
+      <div class="movie-card dark-card">
+        <img src="https://picsum.photos/300/450?random=5" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>8.8/10 | 28K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Night Code</h3>
+          <p class="genre">Crime / Drama</p>
+          <div class="info-strip">
+            <span>Hindi</span>
+            <span>10 Feb</span>
+          </div>
+          <div class="info-strip">
+            <span>2h 18m</span>
+            <span>A</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card dark-card">
+        <img src="https://picsum.photos/300/450?random=6" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>8.2/10 | 21K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Ocean Echo</h3>
+          <p class="genre">Adventure</p>
+          <div class="info-strip">
+            <span>English</span>
+            <span>15 Feb</span>
+          </div>
+          <div class="info-strip">
+            <span>2h 02m</span>
+            <span>U</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card dark-card">
+        <img src="https://picsum.photos/300/450?random=7" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>9.1/10 | 39K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Royal Flame</h3>
+          <p class="genre">Historical / Epic</p>
+          <div class="info-strip">
+            <span>Hindi</span>
+            <span>21 Feb</span>
+          </div>
+          <div class="info-strip">
+            <span>2h 49m</span>
+            <span>UA 16+</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+      <div class="movie-card dark-card">
+        <img src="https://picsum.photos/300/450?random=8" alt="Movie Poster">
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <span>7.9/10 | 16K Votes</span>
+        </div>
+        <div class="card-content">
+          <h3>Velvet Storm</h3>
+          <p class="genre">Thriller</p>
+          <div class="info-strip">
+            <span>Marathi</span>
+            <span>01 Mar</span>
+          </div>
+          <div class="info-strip">
+            <span>1h 56m</span>
+            <span>UA 13+</span>
+          </div>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Copyright 2026 Movie Ticket UI | Designed for learning</p>
+  </footer>
 
 </body>
 </html>

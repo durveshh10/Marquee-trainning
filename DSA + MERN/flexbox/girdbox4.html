@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.container{
+    width:600px;
+    height:500px;
+    border:2px solid black;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-template-rows:repeat(4,1fr);
+}
+
+.item{
+    border:1px solid gray;
+    display:grid;
+}
+
+.box{
+    width:60px;
+    height:60px;
+    background:orangered;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:end;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:center; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:start;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:center; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:end;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:center; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:end;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:center; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:end;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:start; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:center; align-self:center;"></div>
+    </div>
+
+    <div class="item">
+        <div class="box" style="justify-self:end; align-self:end;"></div>
+    </div>
+
+</div>
+
+</body>
+</html>

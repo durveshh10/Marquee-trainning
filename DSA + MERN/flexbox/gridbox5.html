@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.dashboard{
+    width:900px;
+    padding:10px;
+    display:grid;
+    grid-template-columns:150px 1fr 1fr 1fr;
+    grid-template-rows:70px 100px 180px 100px;
+    gap:10px;
+    background:#222;
+}
+
+.box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    font-weight:bold;
+    border:2px solid white;
+}
+
+.sidebar{
+    background:#3366ff;
+    grid-row:1 / span 4;
+}
+.nav{
+    background:#66d9cc;
+    grid-column:2 / span 3;
+}
+
+.users{
+    background:#4fc3f7;
+}
+
+.revenue{
+    background:#6be58a;
+}
+
+.orders{
+    background:#ff9800;
+}
+.chart{
+    background:#8e63ff;
+    grid-column:2 / span 2;
+}
+.table{
+    background:#ff66b3;
+}
+.widget1{
+    background:#00bcd4;
+}
+
+.widget2{
+    background:#29b6f6;
+}
+
+.widget3{
+    background:#03a9f4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="box sidebar"></div>
+
+    <div class="box nav"></div>
+
+    <div class="box users">
+    </div>
+
+    <div class="box revenue">
+    
+    </div>
+
+    <div class="box orders">
+    
+    </div>
+
+    <div class="box chart">
+    
+    </div>
+
+    <div class="box table"></div>
+
+    <div class="box widget1"></div>
+
+    <div class="box widget2"></div>
+
+    <div class="box widget3"></div>
+
+</div>
+
+</body>
+</html>

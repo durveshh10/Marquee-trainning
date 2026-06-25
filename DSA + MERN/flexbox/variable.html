@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overlapping Boxes</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f5f5f5;
+}
+
+.container{
+    width:900px;
+    height:550px;
+    border:3px solid black;
+    position:relative;
+    background:white;
+}
+
+.box{
+    width:180px;
+    height:120px;
+    border:2px solid black;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:40px;
+    font-weight:bold;
+
+    position:relative;
+}
+
+.r{
+    background:red;
+    top:30px;
+    left:50px;
+}
+
+.g{
+    background:green;
+    top:0px;
+    left:200px;
+}
+
+.b{
+    background:blue;
+    color:white;
+    top:-30px;
+    left:350px;
+}
+
+.x{
+    background:yellow;
+    top:-60px;
+    left:500px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box r">R</div>
+
+    <div class="box g">G</div>
+
+    <div class="box b">B</div>
+
+    <div class="box x">X</div>
+
+</div>
+
+</body>
+</html>
