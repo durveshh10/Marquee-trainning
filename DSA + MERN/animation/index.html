@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            color: red;
+        }
+        a:hover {
+            color: green;
+        }
+        a:visited {
+            color: blue;
+        }
+        a:active {
+        border: 2px solid black;
+        }
+        li:first-child {
+            color: red;
+        }
+        li:last-child {
+            color: green;
+        }   
+
+        li:nth-child(2) {
+            color: blue;
+        }   
+        h1: ::after {
+            content: "Hello";
+        }   
+    </style></head>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Services</li>
+        <li>Product</li>
+    </ul>
+</body>
+</html>
