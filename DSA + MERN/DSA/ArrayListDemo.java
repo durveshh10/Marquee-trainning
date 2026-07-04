@@ -27,7 +27,7 @@ public class ArrayListDemo {
         System.out.println("Final Marks: " + marks);
 
         marks.clear();
-
+        
         if (marks.isEmpty()) {
             System.out.println("The list is empty.");
         } else {
