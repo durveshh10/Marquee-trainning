@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="cont">
+        <h3>List</h3>
+    </div>
+
+    <script>
+        // appendChild() -> Last m add krta hai !!
+        const cont = document.getElementById('cont')
+        const p1 = document.createElement("p")
+        const p2 = document.createElement("p")
+
+        p1.innerText = "Emma"
+        cont.appendChild(p1)
+        p2.innerText = "Bob"
+        cont.appendChild(p2)
+        const p3 = document.createElement("p")
+        const p4 = document.createElement("p")
+        const p5 = document.createElement("p")
+        p3.innerText = "JS"
+        p4.innerText = "React"
+        p5.innerText = "Node"
+        cont.append(p3,p4,p5)
+    </script>
+</body>
+
+</html>
