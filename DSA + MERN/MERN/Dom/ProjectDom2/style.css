@@ -1,0 +1,317 @@
+@import url("https://db.onlinewebfonts.com/c/226f58ab113a6d821def90a7d6dc2427?family=GT+Pressura+Mono+Regular+Regular");
+
+/* Base reset so every section starts from a predictable layout. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global page styling and the custom cursor setup. */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "GT Pressura Mono Regular Regular", monospace;
+    background: #f1ede4;
+    color: #111;
+    cursor: none;
+    overflow-x: hidden;
+}
+
+/* Top bar fixed to the viewport like the reference site. */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 21px;
+    letter-spacing: 0.08rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px 40px;
+    z-index: 30;
+    background-color: #111;
+}
+
+/* Left and right groups in the navigation. */
+.right,
+.left {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    color: #f0d2c8;
+}
+
+/* Hero typography is intentionally oversized and tight. */
+.hero {
+    font-family: "GT Pressura Mono Regular Regular", monospace;
+    font-weight: 800;
+    font-size: clamp(4rem, 12vw, 180px);
+    text-align: center;
+    padding: 120px 20px 40px;
+    line-height: 0.95;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    letter-spacing: -0.08em;
+}
+
+/* Floating preview video that follows the pointer inside the hero. */
+.cursor-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transform: translate(24px, 24px) scale(0.92);
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+    will-change: left, top, opacity, transform;
+    background: #111;
+}
+
+.cursor-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Blue dot cursor used outside the hero. */
+.pointer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #2d6cff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 40;
+    opacity: 1;
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+.pointer.is-hidden {
+    opacity: 0;
+}
+
+/* Menu overlay that slides down from the top. */
+.fixed-menu {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 100vh;
+    background: #111;
+    color: #f1ede4;
+    transform: translateY(-100%);
+    transition: transform 0.45s ease;
+    z-index: 25;
+    pointer-events: none;
+}
+
+.fixed-menu.is-open {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fixed-menu__inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: 0 40px;
+    font-size: clamp(2rem, 6vw, 5rem);
+}
+
+.fixed-menu__inner a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.fixed-menu__eyebrow {
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+}
+
+/* Reference-style wide media section. */
+.videoshell {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.videoshell iframe {
+    width: min(90vw, 1440px);
+    aspect-ratio: 16 / 9;
+    border: 0;
+    display: block;
+}
+
+.videoshell video {
+    width: min(90vw, 1440px);
+    aspect-ratio: 16 / 9;
+    display: block;
+    object-fit: cover;
+}
+
+/* Big supporting copy and hover previews. */
+.hero-text,
+.new {
+    margin-top: 110px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: clamp(1.75rem, 5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.hero-text>div {
+    max-width: 1200px;
+}
+
+.hover-trigger {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.image-stack {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 240px;
+    height: 320px;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    z-index: 5;
+}
+
+.hover-trigger:hover .image-stack {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.stack-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+.stack-card:nth-child(1) {
+    transform: rotate(-10deg) translate(-14px, 10px);
+}
+
+.stack-card:nth-child(2) {
+    transform: rotate(-4deg) translate(-6px, 4px);
+}
+
+.stack-card:nth-child(3) {
+    transform: rotate(4deg) translate(6px, -2px);
+}
+
+.stack-card:nth-child(4) {
+    transform: rotate(10deg) translate(14px, -8px);
+}
+
+/* Four visual blocks that act as a simple closing section. */
+.box-cont {
+    margin: 90px auto 0;
+    padding: 0 20px 80px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: min(100%, 1440px);
+}
+
+.box {
+    min-height: 340px;
+    border: 2px solid #111;
+    background: linear-gradient(135deg, #d64b3d, #f0d2c8);
+}
+
+.menu-btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+    cursor: pointer;
+    letter-spacing: inherit;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .right,
+    .left {
+        width: auto;
+        gap: 16px;
+    }
+
+    .hero{
+    padding-top: 100px;
+}
+
+.cursor-box {
+    width: 220px;
+    height: 300px;
+}
+
+.box-cont {
+    grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 640px) {
+    body {
+        cursor: auto;
+    }
+
+    .pointer,
+    .cursor-box {
+        display: none;
+    }
+
+    .hero {
+        font-size: clamp(3rem, 14vw, 6rem);
+    }
+
+    .hero-text {
+        font-size: clamp(1.4rem, 6vw, 2.8rem);
+    }
+}
