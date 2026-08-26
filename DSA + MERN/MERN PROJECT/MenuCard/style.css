@@ -1,0 +1,378 @@
+:root {
+  --maroon: #7a1f2b;
+  --maroon-deep: #4c1420;
+  --saffron: #e8a33d;
+  --turmeric: #f2c14e;
+  --gold: #c9a227;
+  --ivory: #fbf3e3;
+  --henna: #2f1b12;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 50% 0%,
+    #8a2632 0%,
+    #5c1520 55%,
+    #33090f 100%
+  );
+  padding: 40px 20px;
+  font-family: "Mukta", sans-serif;
+}
+
+.menu-card {
+  position: relative;
+  width: min(94vw, 560px);
+  aspect-ratio: 1 / 1;
+  background: var(--ivory);
+  border-radius: 10px;
+  box-shadow:
+    0 30px 70px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(201, 162, 39, 0.4);
+  padding: 34px 32px 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Mandala */
+
+.mandala {
+  position: absolute;
+  top: -70px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(201, 162, 39, 0.16) 0deg 8deg,
+    transparent 8deg 20deg
+  );
+  opacity: 0.9;
+  animation: spin 60s linear infinite;
+}
+
+.mandala::before {
+  content: "";
+  position: absolute;
+  inset: 34px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 10deg,
+    rgba(122, 31, 43, 0.14) 0deg 10deg,
+    transparent 10deg 24deg
+  );
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Border */
+
+.frame {
+  position: absolute;
+  inset: 10px;
+  border: 3px double var(--gold);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+/* Header */
+
+.garland {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 12px 0 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.garland span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 35% 30%,
+    var(--turmeric),
+    var(--saffron) 70%,
+    var(--maroon) 100%
+  );
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--maroon);
+}
+
+.cafe-name {
+  font-family: "Yatra One", cursive;
+  font-size: clamp(30px, 6vw, 40px);
+  margin-top: 8px;
+  line-height: 1.15;
+
+  background: linear-gradient(
+    120deg,
+    var(--maroon-deep),
+    var(--maroon) 40%,
+    var(--gold) 75%,
+    var(--turmeric)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.address {
+  margin-top: 6px;
+  font-size: 13.5px;
+  color: var(--henna);
+  opacity: 0.75;
+}
+
+/* Cup */
+
+.centerpiece {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 88px;
+  margin: 10px 0 6px;
+}
+
+.cup {
+  position: relative;
+  width: 64px;
+  height: 44px;
+
+  background: linear-gradient(
+    180deg,
+    var(--maroon) 0%,
+    var(--maroon-deep) 100%
+  );
+
+  clip-path: polygon(
+    12% 0%,
+    88% 0%,
+    78% 100%,
+    22% 100%
+  );
+
+  box-shadow: inset 0 -6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.cup::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 8%;
+  width: 84%;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--turmeric);
+}
+
+.cup::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid var(--maroon);
+  border-left: none;
+  border-radius: 0 50% 50% 0;
+}
+
+/* Steam */
+
+.steam {
+  position: absolute;
+  bottom: 44px;
+  width: 4px;
+  height: 26px;
+  border-radius: 4px;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(122, 31, 43, 0.35)
+  );
+
+  animation: rise 2.6s ease-in-out infinite;
+}
+
+.steam.s1 {
+  left: calc(50% - 12px);
+  animation-delay: 0s;
+}
+
+.steam.s2 {
+  left: calc(50% - 2px);
+  animation-delay: 0.5s;
+}
+
+.steam.s3 {
+  left: calc(50% + 8px);
+  animation-delay: 1s;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(6px) scaleY(0.7);
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-16px) scaleY(1.1);
+    opacity: 0;
+  }
+}
+
+/* Menu */
+
+.menu-body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 26px;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-section h2 {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: var(--ivory);
+
+  background: linear-gradient(
+    120deg,
+    var(--maroon),
+    var(--maroon-deep)
+  );
+
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+
+.menu-section + .menu-section {
+  margin-top: 14px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(201, 162, 39, 0.14);
+}
+
+.item-name {
+  font-size: 14px;
+  color: var(--henna);
+  white-space: nowrap;
+  padding-left: 4px;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 1.5px dotted rgba(47, 27, 18, 0.35);
+  transform: translateY(-4px);
+}
+
+.price {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--maroon);
+  white-space: nowrap;
+  padding-right: 4px;
+}
+
+/* Footer */
+
+.card-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 14px;
+  padding-top: 10px;
+
+  border-top: 2px solid var(--gold);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--maroon-deep);
+}
+
+/* Mobile */
+
+@media (max-width: 420px) {
+  .menu-card {
+    padding: 26px 20px 16px;
+  }
+
+  .menu-body {
+    gap: 0 16px;
+  }
+
+  .item-name {
+    font-size: 12.5px;
+  }
+
+  .centerpiece {
+    height: 74px;
+  }
+}

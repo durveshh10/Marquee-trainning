@@ -1,184 +1,260 @@
-// ---------- Product Data (working Unsplash image links) ----------
-const products = [
-  {
-    name: "Smartphone Pro Max",
-    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&q=80",
-    price: 499,
-    oldPrice: 699,
-    rating: 4.5
-  },
-  {
-    name: "Ultrabook Laptop",
-    img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80",
-    price: 899,
-    oldPrice: 1299,
-    rating: 4.7
-  },
-  {
-    name: "Wireless Headphones",
-    img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80",
-    price: 79,
-    oldPrice: 149,
-    rating: 4.3
-  },
-  {
-    name: "Smartwatch Ultra",
-    img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80",
-    price: 199,
-    oldPrice: 299,
-    rating: 4.6
-  },
-  {
-    name: "Gaming Monitor",
-    img: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&q=80",
-    price: 249,
-    oldPrice: 399,
-    rating: 4.4
-  },
-  {
-    name: "Mechanical Keyboard",
-    img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&q=80",
-    price: 59,
-    oldPrice: 99,
-    rating: 4.8
-  },
-  {
-    name: "DSLR Camera",
-    img: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=400&q=80",
-    price: 549,
-    oldPrice: 799,
-    rating: 4.6
-  },
-  {
-    name: "Bluetooth Speaker",
-    img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&q=80",
-    price: 45,
-    oldPrice: 89,
-    rating: 4.2
-  }
+/* CART */
+
+let cartCount = 0;
+
+function addToCart(productName) {
+
+    cartCount++;
+
+    document.getElementById("cartCount").textContent = cartCount;
+
+    alert(productName + " added to cart!");
+}
+
+
+function showCart() {
+
+    if (cartCount === 0) {
+        alert("Your cart is empty.");
+    } else {
+        alert("You have " + cartCount + " item(s) in your cart.");
+    }
+}
+
+
+/* LIKE */
+
+function likeProduct(button) {
+
+    button.classList.toggle("liked");
+
+    if (button.classList.contains("liked")) {
+        button.textContent = "♥";
+    } else {
+        button.textContent = "♡";
+    }
+}
+
+
+/* LOGIN POPUP */
+
+function openLogin() {
+
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+
+function closeLogin() {
+
+    document.getElementById("loginModal").style.display = "none";
+}
+
+
+function loginUser() {
+
+    const mobile = document.getElementById("mobileNumber").value;
+
+    if (mobile.length === 10 && !isNaN(mobile)) {
+
+        alert("Login successful!");
+
+        closeLogin();
+
+    } else {
+
+        alert("Please enter a valid 10-digit mobile number.");
+
+    }
+}
+
+
+/* LOCATION POPUP */
+
+function openLocation() {
+
+    document.getElementById("locationModal").style.display = "flex";
+}
+
+
+function closeLocation() {
+
+    document.getElementById("locationModal").style.display = "none";
+}
+
+
+function checkPincode() {
+
+    const pincode = document.getElementById("pincode").value;
+    const message = document.getElementById("locationMessage");
+
+    if (pincode.length === 6 && !isNaN(pincode)) {
+
+        message.textContent = "Delivery available at " + pincode;
+        message.style.color = "green";
+
+    } else {
+
+        message.textContent = "Please enter a valid 6-digit pincode.";
+        message.style.color = "red";
+
+    }
+}
+
+
+/* SEARCH */
+
+function searchProducts() {
+
+    const searchText =
+        document.getElementById("searchInput").value.toLowerCase().trim();
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    if (searchText === "") {
+
+        products.forEach(function(product) {
+            product.style.display = "block";
+        });
+
+        return;
+    }
+
+    products.forEach(function(product) {
+
+        const productName =
+            product.querySelector("h3").textContent.toLowerCase();
+
+        if (productName.includes(searchText)) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+}
+
+
+/* SEARCH WHEN PRESSING ENTER */
+
+document
+    .getElementById("searchInput")
+    .addEventListener("keyup", function(event) {
+
+        if (event.key === "Enter") {
+            searchProducts();
+        }
+
+    });
+
+
+/* FILTER */
+
+function filterProducts(category) {
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        if (
+            category === "all" ||
+            product.dataset.category === category
+        ) {
+
+            product.style.display = "block";
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    window.scrollTo({
+        top: document.getElementById("productGrid").offsetTop - 100,
+        behavior: "smooth"
+    });
+}
+
+
+/* BANNER SLIDER */
+
+const banners = [
+
+    "https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1400&q=80",
+
+    "https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=1400&q=80",
+
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=80"
+
 ];
 
-// ---------- Render Product Grid ----------
-const productGrid = document.getElementById('productGrid');
+let currentBanner = 0;
 
-function renderProducts(list) {
-  productGrid.innerHTML = '';
-  list.forEach((product, index) => {
-    const card = document.createElement('div');
-    card.className = 'item';
-    card.innerHTML = `
-      <img src="${product.img}" alt="${product.name}" loading="lazy"
-           onerror="this.onerror=null;this.src='https://placehold.co/300x300?text=${encodeURIComponent(product.name)}';">
-      <h3>${product.name}</h3>
-      <p class="price">$${product.price} <span class="old-price">$${product.oldPrice}</span></p>
-      <span class="rating">${product.rating} &#9733;</span>
-      <button class="add-to-cart" data-index="${index}">Add to Cart</button>
-    `;
-    productGrid.appendChild(card);
-  });
+
+function showBanner() {
+
+    document.getElementById("bannerImage").src =
+        banners[currentBanner];
+
 }
 
-renderProducts(products);
-
-// ---------- Cart Logic ----------
-let cartCount = 0;
-const cartCountEl = document.getElementById('cartCount');
-const toastEl = document.getElementById('toast');
-
-function showToast(message) {
-  toastEl.textContent = message;
-  toastEl.classList.add('show');
-  clearTimeout(showToast.timer);
-  showToast.timer = setTimeout(() => {
-    toastEl.classList.remove('show');
-  }, 1800);
-}
-
-productGrid.addEventListener('click', (e) => {
-  const btn = e.target.closest('.add-to-cart');
-  if (!btn) return;
-  const index = Number(btn.dataset.index);
-  const product = products[index];
-  cartCount += 1;
-  cartCountEl.textContent = cartCount;
-  showToast(`Added "${product.name}" to cart`);
-});
-
-document.getElementById('cartBtn').addEventListener('click', () => {
-  if (cartCount === 0) {
-    showToast('Your cart is empty. Start shopping!');
-  } else {
-    showToast(`You have ${cartCount} item(s) in your cart`);
-  }
-});
-
-document.getElementById('loginBtn').addEventListener('click', () => {
-  showToast('Welcome! Please login to continue');
-});
-
-// ---------- Search Filter ----------
-document.getElementById('searchBox').addEventListener('input', (e) => {
-  const query = e.target.value.trim().toLowerCase();
-  const filtered = products.filter(p => p.name.toLowerCase().includes(query));
-  renderProducts(filtered);
-});
-
-// ---------- Carousel Logic ----------
-const track = document.getElementById('carouselTrack');
-const slides = Array.from(track.children);
-const dotsContainer = document.getElementById('carouselDots');
-const dots = Array.from(dotsContainer.children);
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-
-let currentSlide = 0;
-let autoSlideTimer = null;
-
-function goToSlide(index) {
-  currentSlide = (index + slides.length) % slides.length;
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === currentSlide));
-}
 
 function nextSlide() {
-  goToSlide(currentSlide + 1);
+
+    currentBanner++;
+
+    if (currentBanner >= banners.length) {
+        currentBanner = 0;
+    }
+
+    showBanner();
 }
 
-function prevSlide() {
-  goToSlide(currentSlide - 1);
+
+function previousSlide() {
+
+    currentBanner--;
+
+    if (currentBanner < 0) {
+        currentBanner = banners.length - 1;
+    }
+
+    showBanner();
 }
 
-function startAutoSlide() {
-  autoSlideTimer = setInterval(nextSlide, 4000);
-}
 
-function stopAutoSlide() {
-  clearInterval(autoSlideTimer);
-}
+/* AUTO SLIDE */
 
-nextBtn.addEventListener('click', () => {
-  nextSlide();
-  stopAutoSlide();
-  startAutoSlide();
-});
+setInterval(function() {
 
-prevBtn.addEventListener('click', () => {
-  prevSlide();
-  stopAutoSlide();
-  startAutoSlide();
-});
+    nextSlide();
 
-dots.forEach(dot => {
-  dot.addEventListener('click', () => {
-    goToSlide(Number(dot.dataset.index));
-    stopAutoSlide();
-    startAutoSlide();
-  });
-});
+}, 4000);
 
-const carousel = document.getElementById('carousel');
-carousel.addEventListener('mouseenter', stopAutoSlide);
-carousel.addEventListener('mouseleave', startAutoSlide);
 
-goToSlide(0);
-startAutoSlide();
+/* CLOSE POPUPS WHEN CLICKING OUTSIDE */
+
+window.onclick = function(event) {
+
+    const loginModal =
+        document.getElementById("loginModal");
+
+    const locationModal =
+        document.getElementById("locationModal");
+
+    if (event.target === loginModal) {
+        closeLogin();
+    }
+
+    if (event.target === locationModal) {
+        closeLocation();
+    }
+
+};

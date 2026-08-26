@@ -1,129 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MarketPlace - Online Shopping Store</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flipkart Clone - Home</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="top">
-      <div class="logo">MarketPlace</div>
-      <div class="travel">Travel</div>
-      <div class="location"><i class="fa fa-map-marker"></i> Delhi, India</div>
-    </div>
 
-    <div class="middle">
-      <input type="text" id="searchBox" placeholder="Search for Products, Brand and More">
-      <span class="login-btn" id="loginBtn">Login</span>
-      <span class="more-btn">More <i class="fa fa-angle-down"></i></span>
-      <span class="cart-btn" id="cartBtn">
-        <i class="fa fa-shopping-cart"></i> Cart
-        <span class="cart-count" id="cartCount">0</span>
-      </span>
-    </div>
+    <!-- NAVBAR -->
+    <header class="navbar">
 
-    <div class="bottom">
-      <div class="box"><i class="fa fa-mobile"></i><span>Mobiles</span></div>
-      <div class="box"><i class="fa fa-laptop"></i><span>Electronics</span></div>
-      <div class="box"><i class="fa fa-book"></i><span>Books</span></div>
-      <div class="box"><i class="fa fa-home"></i><span>Home</span></div>
-      <div class="box"><i class="fa fa-plug"></i><span>Appliances</span></div>
-      <div class="box"><i class="fa fa-gamepad"></i><span>Gaming</span></div>
-      <div class="box"><i class="fa fa-gift"></i><span>Gifts</span></div>
-      <div class="box"><i class="fa fa-headphones"></i><span>Audio</span></div>
-      <div class="box"><i class="fa fa-camera"></i><span>Camera</span></div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION - Sliding Banner Carousel -->
-  <section id="hero">
-    <div class="carousel" id="carousel">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1400&q=80" alt="Big Electronics Sale">
-          <div class="slide-caption">
-            <h2>Big Electronics Sale</h2>
-            <p>Up to 60% off on top brands</p>
-          </div>
+        <div class="logo">
+            <span>Flipkart</span>
+            <small>Explore <b>Plus</b></small>
         </div>
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1400&q=80" alt="Fashion Fest">
-          <div class="slide-caption">
-            <h2>Fashion Fest</h2>
-            <p>New arrivals every week</p>
-          </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search for products, brands and more"
+            >
+            <button onclick="searchProducts()">🔍</button>
         </div>
-        <div class="slide">
-          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1400&q=80" alt="Home Essentials">
-          <div class="slide-caption">
-            <h2>Home Essentials</h2>
-            <p>Everything for your home, delivered fast</p>
-          </div>
+
+        <button class="login-btn" onclick="openLogin()">
+            Login
+        </button>
+
+        <button class="nav-btn" onclick="openLocation()">
+            📍 Location
+        </button>
+
+        <button class="nav-btn more-btn">
+            More ▾
+        </button>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart <span id="cartCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- CATEGORY MENU -->
+    <section class="categories">
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=200&q=80">
+            <p>Top Offers</p>
         </div>
-      </div>
 
-      <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
-      <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=200&q=80">
+            <p>Mobiles</p>
+        </div>
 
-      <div class="carousel-dots" id="carouselDots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-      </div>
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=200&q=80">
+            <p>Electronics</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80">
+            <p>Fashion</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=200&q=80">
+            <p>Home</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1578898887932-dce23a595ad4?auto=format&fit=crop&w=200&q=80">
+            <p>Appliances</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=200&q=80">
+            <p>Beauty</p>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=200&q=80">
+            <p>Watches</p>
+        </div>
+
+    </section>
+
+
+    <!-- BANNER -->
+    <section class="banner-section">
+
+        <button class="slide-btn left" onclick="previousSlide()">
+            ❮
+        </button>
+
+        <div class="banner">
+            <img id="bannerImage"
+                 src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?auto=format&fit=crop&w=1400&q=80">
+        </div>
+
+        <button class="slide-btn right" onclick="nextSlide()">
+            ❯
+        </button>
+
+    </section>
+
+
+    <!-- BEST DEALS -->
+    <section class="product-section">
+
+        <div class="section-heading">
+            <h2>Best Deals</h2>
+            <button onclick="filterProducts('all')">View All</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- MOBILE -->
+            <div class="product-card" data-category="mobiles">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"
+                    alt="Smartphone"
+                >
+
+                <h3>Premium Smartphone</h3>
+
+                <p class="rating">⭐ 4.4</p>
+
+                <p class="price">
+                    ₹19,999
+                    <span>₹24,999</span>
+                </p>
+
+                <p class="discount">20% off</p>
+
+                <button class="add-btn" onclick="addToCart('Premium Smartphone')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- LAPTOP -->
+            <div class="product-card" data-category="electronics">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80"
+                    alt="Laptop"
+                >
+
+                <h3>Powerful Laptop</h3>
+
+                <p class="rating">⭐ 4.5</p>
+
+                <p class="price">
+                    ₹54,999
+                    <span>₹69,999</span>
+                </p>
+
+                <p class="discount">21% off</p>
+
+                <button class="add-btn" onclick="addToCart('Powerful Laptop')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- SHOES -->
+            <div class="product-card" data-category="fashion">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80"
+                    alt="Shoes"
+                >
+
+                <h3>Running Shoes</h3>
+
+                <p class="rating">⭐ 4.3</p>
+
+                <p class="price">
+                    ₹1,499
+                    <span>₹2,499</span>
+                </p>
+
+                <p class="discount">40% off</p>
+
+                <button class="add-btn" onclick="addToCart('Running Shoes')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- HEADPHONES -->
+            <div class="product-card" data-category="electronics">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
+                    alt="Headphones"
+                >
+
+                <h3>Wireless Headphones</h3>
+
+                <p class="rating">⭐ 4.6</p>
+
+                <p class="price">
+                    ₹2,999
+                    <span>₹4,999</span>
+                </p>
+
+                <p class="discount">40% off</p>
+
+                <button class="add-btn" onclick="addToCart('Wireless Headphones')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- WATCH -->
+            <div class="product-card" data-category="fashion">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+                    alt="Watch"
+                >
+
+                <h3>Classic Wrist Watch</h3>
+
+                <p class="rating">⭐ 4.2</p>
+
+                <p class="price">
+                    ₹1,999
+                    <span>₹3,499</span>
+                </p>
+
+                <p class="discount">43% off</p>
+
+                <button class="add-btn" onclick="addToCart('Classic Wrist Watch')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- TV -->
+            <div class="product-card" data-category="electronics">
+
+                <button class="like-btn" onclick="likeProduct(this)">
+                    ♡
+                </button>
+
+                <img
+                    src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=500&q=80"
+                    alt="Smart TV"
+                >
+
+                <h3>4K Smart TV</h3>
+
+                <p class="rating">⭐ 4.5</p>
+
+                <p class="price">
+                    ₹34,999
+                    <span>₹49,999</span>
+                </p>
+
+                <p class="discount">30% off</p>
+
+                <button class="add-btn" onclick="addToCart('4K Smart TV')">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOBILE SECTION -->
+    <section class="product-section">
+
+        <div class="section-heading">
+            <h2>Mobiles</h2>
+            <button onclick="filterProducts('mobiles')">
+                View All
+            </button>
+        </div>
+
+        <div class="small-info">
+            Latest smartphones at great prices
+        </div>
+
+    </section>
+
+
+    <!-- ELECTRONICS -->
+    <section class="product-section">
+
+        <div class="section-heading">
+            <h2>Electronics</h2>
+            <button onclick="filterProducts('electronics')">
+                View All
+            </button>
+        </div>
+
+        <div class="small-info">
+            Laptops, headphones, TVs and more
+        </div>
+
+    </section>
+
+
+    <!-- FASHION -->
+    <section class="product-section">
+
+        <div class="section-heading">
+            <h2>Fashion</h2>
+            <button onclick="filterProducts('fashion')">
+                View All
+            </button>
+        </div>
+
+        <div class="small-info">
+            Trending fashion and accessories
+        </div>
+
+    </section>
+
+
+    <!-- HOME -->
+    <section class="product-section">
+
+        <div class="section-heading">
+            <h2>Home</h2>
+            <button onclick="filterProducts('all')">
+                View All
+            </button>
+        </div>
+
+        <div class="small-info">
+            Make your home beautiful and comfortable
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div>
+            <h3>ABOUT</h3>
+            <p>Contact Us</p>
+            <p>About Us</p>
+            <p>Careers</p>
+        </div>
+
+        <div>
+            <h3>HELP</h3>
+            <p>Payments</p>
+            <p>Shipping</p>
+            <p>Cancellation</p>
+        </div>
+
+        <div>
+            <h3>POLICY</h3>
+            <p>Return Policy</p>
+            <p>Terms Of Use</p>
+            <p>Privacy</p>
+        </div>
+
+        <div>
+            <h3>FOLLOW US</h3>
+            <p>Instagram</p>
+            <p>Facebook</p>
+            <p>Twitter</p>
+        </div>
+
+    </footer>
+
+
+    <!-- LOGIN POPUP -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-box">
+
+            <button class="close-btn" onclick="closeLogin()">
+                ×
+            </button>
+
+            <h2>Login</h2>
+
+            <p>Enter your mobile number</p>
+
+            <input
+                type="text"
+                id="mobileNumber"
+                placeholder="Mobile Number"
+                maxlength="10"
+            >
+
+            <button class="modal-action" onclick="loginUser()">
+                Continue
+            </button>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- RECOMMENDATION SECTION -->
-  <section id="recomendation">
-    <h2 class="section-title">Recommended for You</h2>
-    <div class="product-grid" id="productGrid">
-      <!-- product cards are injected by JS -->
+
+    <!-- LOCATION POPUP -->
+    <div class="modal" id="locationModal">
+
+        <div class="modal-box">
+
+            <button class="close-btn" onclick="closeLocation()">
+                ×
+            </button>
+
+            <h2>Select Location</h2>
+
+            <p>Enter your 6-digit pincode</p>
+
+            <input
+                type="text"
+                id="pincode"
+                placeholder="Enter Pincode"
+                maxlength="6"
+            >
+
+            <button class="modal-action" onclick="checkPincode()">
+                Check
+            </button>
+
+            <p id="locationMessage"></p>
+
+        </div>
+
     </div>
-  </section>
 
-  <!-- Footer Section -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="description">
-        <h2>MarketPlace</h2>
-        <p>Best place to shop online</p>
-        <p>India's trusted marketplace</p>
-      </div>
 
-      <div class="about">
-        <h3>About</h3>
-        <p>About us</p>
-        <p>Contact us</p>
-        <p>Career</p>
-        <p>Information</p>
-      </div>
+    <script src="script.js"></script>
 
-      <div class="help">
-        <h3>Help</h3>
-        <p>Payment</p>
-        <p>Orders</p>
-        <p>Cancellation</p>
-        <p>FAQ</p>
-      </div>
-
-      <div class="policy">
-        <h3>Policy</h3>
-        <p>Return Policy</p>
-        <p>Terms of Use</p>
-        <p>Security</p>
-        <p>Privacy</p>
-      </div>
-    </div>
-    <p class="copy">&copy; 2026 | All rights are reserved | MarketPlace.com</p>
-  </footer>
-
-  <!-- Toast for add-to-cart feedback -->
-  <div class="toast" id="toast"></div>
-
-  <script src="script.js"></script>
 </body>
 </html>
