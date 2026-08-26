@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketPlace - Online Shopping Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="top">
+      <div class="logo">MarketPlace</div>
+      <div class="travel">Travel</div>
+      <div class="location"><i class="fa fa-map-marker"></i> Delhi, India</div>
+    </div>
+
+    <div class="middle">
+      <input type="text" id="searchBox" placeholder="Search for Products, Brand and More">
+      <span class="login-btn" id="loginBtn">Login</span>
+      <span class="more-btn">More <i class="fa fa-angle-down"></i></span>
+      <span class="cart-btn" id="cartBtn">
+        <i class="fa fa-shopping-cart"></i> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </span>
+    </div>
+
+    <div class="bottom">
+      <div class="box"><i class="fa fa-mobile"></i><span>Mobiles</span></div>
+      <div class="box"><i class="fa fa-laptop"></i><span>Electronics</span></div>
+      <div class="box"><i class="fa fa-book"></i><span>Books</span></div>
+      <div class="box"><i class="fa fa-home"></i><span>Home</span></div>
+      <div class="box"><i class="fa fa-plug"></i><span>Appliances</span></div>
+      <div class="box"><i class="fa fa-gamepad"></i><span>Gaming</span></div>
+      <div class="box"><i class="fa fa-gift"></i><span>Gifts</span></div>
+      <div class="box"><i class="fa fa-headphones"></i><span>Audio</span></div>
+      <div class="box"><i class="fa fa-camera"></i><span>Camera</span></div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION - Sliding Banner Carousel -->
+  <section id="hero">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1400&q=80" alt="Big Electronics Sale">
+          <div class="slide-caption">
+            <h2>Big Electronics Sale</h2>
+            <p>Up to 60% off on top brands</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1400&q=80" alt="Fashion Fest">
+          <div class="slide-caption">
+            <h2>Fashion Fest</h2>
+            <p>New arrivals every week</p>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=1400&q=80" alt="Home Essentials">
+          <div class="slide-caption">
+            <h2>Home Essentials</h2>
+            <p>Everything for your home, delivered fast</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+
+      <div class="carousel-dots" id="carouselDots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATION SECTION -->
+  <section id="recomendation">
+    <h2 class="section-title">Recommended for You</h2>
+    <div class="product-grid" id="productGrid">
+      <!-- product cards are injected by JS -->
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="description">
+        <h2>MarketPlace</h2>
+        <p>Best place to shop online</p>
+        <p>India's trusted marketplace</p>
+      </div>
+
+      <div class="about">
+        <h3>About</h3>
+        <p>About us</p>
+        <p>Contact us</p>
+        <p>Career</p>
+        <p>Information</p>
+      </div>
+
+      <div class="help">
+        <h3>Help</h3>
+        <p>Payment</p>
+        <p>Orders</p>
+        <p>Cancellation</p>
+        <p>FAQ</p>
+      </div>
+
+      <div class="policy">
+        <h3>Policy</h3>
+        <p>Return Policy</p>
+        <p>Terms of Use</p>
+        <p>Security</p>
+        <p>Privacy</p>
+      </div>
+    </div>
+    <p class="copy">&copy; 2026 | All rights are reserved | MarketPlace.com</p>
+  </footer>
+
+  <!-- Toast for add-to-cart feedback -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

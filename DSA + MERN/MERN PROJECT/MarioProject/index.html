@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super Mario Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game">
+      <div class="world">
+        <div class="clouds">
+          <div class="cloud cloud1"></div>
+          <div class="cloud cloud2"></div>
+        </div>
+
+        <!-- Question Blocks -->
+        <div class="question q1">?</div>
+        <div class="question q2">?</div>
+        <div class="question q3">?</div>
+
+        <!-- Brick Blocks -->
+        <div class="brick b1"></div>
+        <div class="brick b2"></div>
+
+        <!-- Pipe -->
+        <img
+          src="https://media.tenor.com/UkvleU1dQK4AAAAj/2d-mario-running.gif"
+          alt="Pipe"
+          class="pipe"
+        />
+
+        <!-- Mushroom -->
+        <img
+          src="https://media.tenor.com/UkvleU1dQK4AAAAj/2d-mario-running.gif"
+          alt="Mushroom"
+          class="mushroom"
+        />
+
+        <!-- Ground moved inside world so it expands across the 4000px canvas -->
+        <div class="ground"></div>
+      </div>
+
+      <!-- Player stays fixed relative to screen view -->
+      <div class="player"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

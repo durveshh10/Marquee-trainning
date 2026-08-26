@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #afafaf;
+}
+
+.game {
+  width: 1000px;
+  height: 500px;
+  border: 3px solid #000;
+  position: relative;
+  overflow: hidden;
+  background: #5c94fc; /* Added classic sky blue background */
+}
+
+.world {
+  position: absolute;
+  width: 4000px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.ground {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  background: saddlebrown;
+  bottom: 0;
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 50px;
+  width: 100px;
+  height: 60px;
+  background: white;
+}
+
+.cloud1 {
+  top: 50px;
+  left: 150px;
+}
+
+.cloud2 {
+  top: 80px;
+  left: 900px;
+}
+
+.question {
+  width: 50px;
+  height: 50px;
+  background: goldenrod;
+  border: 3px solid brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 180px;
+}
+
+.q1 {
+  left: 1300px;
+}
+.q2 {
+  left: 1360px;
+}
+.q3 {
+  left: 1420px;
+}
+
+.brick {
+  width: 55px;
+  height: 50px;
+  background-color: goldenrod;
+  border: 2px solid brown;
+  position: absolute;
+  top: 180px;
+}
+
+.b1 {
+  left: 1480px;
+}
+.b2 {
+  left: 1540px;
+}
+
+/* Pipe positioning */
+.pipe {
+  position: absolute;
+  bottom: 90px;
+  left: 600px;
+  height: 100px;
+  width: auto;
+}
+
+/* Mushroom positioning */
+.mushroom {
+  position: absolute;
+  bottom: 90px;
+  left: 400px;
+  width: 40px;
+  height: 40px;
+}
+
+.player {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 50px;
+  bottom: 90px;
+  background: url("https://media.tenor.com/UkvleU1dQK4AAAAj/2d-mario-running.gif") no-repeat center / contain;
+  z-index: 10;
+}
